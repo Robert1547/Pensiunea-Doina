@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pensiunea Doina — Eșelnița, pe malul Dunării</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --river: #2d5f7a;
+    --river-deep: #1a3d52;
+    --river-light: #5b9ab5;
+    --sand: #e8dcc8;
+    --sand-light: #f5efe3;
+    --earth: #8b6b47;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --fog: #d0dde5;
+    --text-dark: #1c2b35;
+    --text-mid: #4a6070;
+    --white: #fdfaf6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── LANGUAGE SWITCHER ── */
+  #lang-bar {
+    position: fixed;
+    top: 16px; right: 16px;
+    z-index: 1000;
+    display: flex;
+    gap: 4px;
+    background: rgba(253,250,246,0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 100px;
+    padding: 4px;
+  }
+  #lang-bar button {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    border: none;
+    background: transparent;
+    padding: 5px 12px;
+    border-radius: 100px;
+    cursor: pointer;
+    color: var(--text-mid);
+    transition: all 0.25s ease;
+  }
+  #lang-bar button.active {
+    background: var(--river);
+    color: white;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100svh;
+    background:
+      linear-gradient(to bottom, rgba(26,61,82,0.55) 0%, rgba(26,61,82,0.2) 50%, rgba(26,61,82,0.8) 100%),
+      url('https://www.turistinfo.ro/images/cazare/354071.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 24px 56px;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, var(--white));
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(201,168,76,0.2);
+    border: 1px solid rgba(201,168,76,0.5);
+    color: var(--gold-light);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+    width: fit-content;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 11vw, 72px);
+    font-weight: 300;
+    color: white;
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.05em;
+    margin-bottom: 32px;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-stars {
+    color: var(--gold-light);
+    font-size: 16px;
+    margin-bottom: 4px;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.3s ease both;
+    position: relative;
+    z-index: 2;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--river-deep);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s ease;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 13px 28px;
+    border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.4);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s ease;
+  }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+  /* ── SCROLL INDICATOR ── */
+  .scroll-hint {
+    position: absolute;
+    bottom: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    animation: fadeUp 1s 0.6s ease both;
+  }
+  .scroll-hint span {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+    animation: scrollDrop 1.5s 1s ease-in-out infinite;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 72px 24px; }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--river-light);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 8vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+  }
+
+  .section-title em { font-style: italic; color: var(--river); }
+
+  .section-body {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-mid);
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    background: var(--white);
+  }
+
+  .about-grid {
+    display: grid;
+    gap: 32px;
+    margin-top: 40px;
+  }
+
+  .about-img-stack {
+    position: relative;
+    height: 280px;
+  }
+
+  .about-img-stack img {
+    position: absolute;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .about-img-stack .img-main {
+    width: 80%;
+    height: 240px;
+    left: 0; top: 0;
+    box-shadow: 0 20px 60px rgba(45,95,122,0.2);
+  }
+
+  .about-img-stack .img-accent {
+    width: 55%;
+    height: 160px;
+    right: 0; bottom: 0;
+    border: 3px solid var(--white);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+
+  /* ── STATS STRIP ── */
+  .stats-strip {
+    background: var(--river-deep);
+    padding: 40px 24px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .stat-item { text-align: center; }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-top: 6px;
+    display: block;
+  }
+
+  /* ── GALLERY ── */
+  .gallery { background: var(--sand-light); overflow: hidden; padding-bottom: 0; }
+
+  .gallery-scroll {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 32px 24px 48px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .gallery-scroll::-webkit-scrollbar { display: none; }
+
+  .gallery-img {
+    flex-shrink: 0;
+    width: 260px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  .gallery-img:hover { transform: scale(1.02); }
+
+  /* ── FACILITIES ── */
+  .facilities { background: var(--white); }
+
+  .facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .facility-card {
+    background: var(--sand-light);
+    border-radius: 12px;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .facility-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(45,95,122,0.1); }
+
+  .facility-icon {
+    font-size: 26px;
+    line-height: 1;
+  }
+
+  .facility-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.3;
+  }
+
+  /* ── ROOMS ── */
+  .rooms { background: var(--river-deep); }
+
+  .rooms .section-label { color: var(--gold-light); opacity: 0.7; }
+  .rooms .section-title { color: var(--white); }
+  .rooms .section-title em { color: var(--gold-light); }
+  .rooms .section-body { color: rgba(255,255,255,0.6); }
+
+  .rooms-list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .room-row {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .room-info {}
+  .room-type {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 4px;
+  }
+  .room-detail {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.04em;
+  }
+
+  .room-price {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .price-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--gold-light);
+    display: block;
+    line-height: 1;
+  }
+  .price-note {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ── AMENITIES LIST ── */
+  .amenities { background: var(--sand-light); }
+
+  .amenity-group { margin-bottom: 28px; }
+
+  .amenity-group-title {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--river);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--fog);
+  }
+
+  .amenity-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .amenity-tag {
+    font-size: 12px;
+    color: var(--text-mid);
+    background: white;
+    border-radius: 100px;
+    padding: 5px 12px;
+    border: 1px solid var(--fog);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .amenity-tag::before {
+    content: '✓';
+    color: var(--river-light);
+    font-size: 10px;
+  }
+
+  /* ── POLICIES ── */
+  .policies { background: var(--white); }
+
+  .policy-cards {
+    display: grid;
+    gap: 16px;
+    margin-top: 36px;
+  }
+
+  .policy-card {
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    background: var(--sand-light);
+    border-radius: 0 10px 10px 0;
+  }
+
+  .policy-card-title {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--earth);
+    margin-bottom: 6px;
+  }
+
+  .policy-card-text {
+    font-size: 14px;
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  /* ── CONTACT ── */
+  .contact {
+    background: linear-gradient(135deg, var(--river-deep) 0%, var(--river) 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact::before {
+    content: 'DOINA';
+    position: absolute;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 160px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.03);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .contact .section-label { color: rgba(255,255,255,0.4); }
+  .contact .section-title { color: white; }
+
+  .contact-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    margin: 10px 0;
+  }
+
+  .contact-detail .dot {
+    width: 4px; height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .contact-phone {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--gold-light);
+    margin: 24px 0 8px;
+    display: block;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-phone:hover { color: white; }
+
+  .contact-name {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+
+  .contact-btns {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-call {
+    background: var(--gold);
+    color: var(--river-deep);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s ease;
+  }
+  .btn-call:hover { background: var(--gold-light); }
+
+  .btn-sms {
+    background: transparent;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 13px 32px;
+    border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.3);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s ease;
+  }
+  .btn-sms:hover { background: rgba(255,255,255,0.1); }
+
+  /* ── MAP SECTION ── */
+  .map-section { padding: 0; height: 280px; }
+  .map-section iframe { width: 100%; height: 100%; border: none; display: block; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--text-dark);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── LIGHTBOX ── */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .lightbox.open { opacity: 1; pointer-events: all; }
+  .lightbox img {
+    max-width: 95vw;
+    max-height: 90vh;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 20px; right: 20px;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    line-height: 1;
+    background: none;
+    border: none;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scrollDrop {
+    0%,100% { transform: scaleY(1); transform-origin: top; }
+    50%      { transform: scaleY(0.4); transform-origin: top; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── RIVER DIVIDER ── */
+  .river-divider {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    background: var(--sand-light);
+  }
+  .river-divider svg { display: block; width: 100%; }
+
+  /* ── NAV DOT ── */
+  .nav-dots {
+    position: fixed;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 100;
+  }
+  .nav-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--fog);
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
+  }
+  .nav-dot.active {
+    background: var(--river);
+    transform: scale(1.5);
+  }
+
+  @media (max-width: 360px) {
+    .facilities-grid { grid-template-columns: 1fr; }
+    .stats-strip { grid-template-columns: 1fr; gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div id="lang-bar">
+  <button class="active" onclick="setLang('ro')">RO</button>
+  <button onclick="setLang('en')">EN</button>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="sec-hero">
+  <div class="hero-badge">
+    <span>📍</span>
+    <span data-ro="Eșelnița, Mehedinți" data-en="Eșelnița, Mehedinți County">Eșelnița, Mehedinți</span>
+  </div>
+  <div class="hero-stars">★★★</div>
+  <h1>Pensiunea<br><em>Doina</em></h1>
+  <p class="hero-sub" data-ro="Pe malul Dunării · Cazanele Dunării" data-en="On the Danube riverbank · Cazanele Dunării">Pe malul Dunării · Cazanele Dunării</p>
+  <div class="hero-cta">
+    <a href="tel:+40790759787" class="btn-primary" data-ro="📞 Rezervă acum" data-en="📞 Book now">📞 Rezervă acum</a>
+    <a href="#sec-gallery" class="btn-outline" data-ro="Vezi galeria" data-en="View gallery">Vezi galeria</a>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span data-ro="Descoperă" data-en="Discover">Descoperă</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="sec-about">
+  <span class="section-label reveal" data-ro="Despre noi" data-en="About us">Despre noi</span>
+  <h2 class="section-title reveal" data-ro="O oază de liniște <em>pe Dunăre</em>" data-en="An oasis of calm <em>on the Danube</em>">O oază de liniște <em>pe Dunăre</em></h2>
+  <p class="section-body reveal" data-ro="Situată pe DN57, pe șoseaua ce leagă Orșova de Moldova Nouă, la 2 km de ieșirea din com. Eșelnița, Pensiunea Doina vă oferă o priveliște de vis direct spre Dunăre. De pe terasă, fluviul îți răsfață privirea cu toată splendoarea lui — locul ideal pentru relaxare și odihnă." data-en="Located on DN57, on the road linking Orșova to Moldova Nouă, just 2 km from Eșelnița, Pensiunea Doina offers a dream view directly onto the Danube. From the terrace, the river mesmerizes you with its full splendor — the ideal spot for rest and relaxation.">
+    Situată pe DN57, pe șoseaua ce leagă Orșova de Moldova Nouă, la 2 km de ieșirea din com. Eșelnița, Pensiunea Doina vă oferă o priveliște de vis direct spre Dunăre. De pe terasă, fluviul îți răsfață privirea cu toată splendoarea lui — locul ideal pentru relaxare și odihnă.
+  </p>
+
+  <div class="about-grid reveal">
+    <div class="about-img-stack">
+      <img class="img-main" src="https://www.turistinfo.ro/images/cazare/354071.jpg" alt="Pensiunea Doina" loading="lazy">
+      <img class="img-accent" src="https://www.turistinfo.ro/images/cazare/862018.jpg" alt="Terasa" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat-item reveal">
+    <span class="stat-num">6</span>
+    <span class="stat-label" data-ro="Camere duble" data-en="Double rooms">Camere duble</span>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-num">12</span>
+    <span class="stat-label" data-ro="Locuri disponibile" data-en="Available spots">Locuri disponibile</span>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-num">★★★</span>
+    <span class="stat-label" data-ro="Clasificare" data-en="Classification">Clasificare</span>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-num">46+</span>
+    <span class="stat-label" data-ro="Recenzii pozitive" data-en="Positive reviews">Recenzii pozitive</span>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery" id="sec-gallery">
+  <span class="section-label reveal" data-ro="Imagini" data-en="Gallery">Imagini</span>
+  <h2 class="section-title reveal" data-ro="Locuri care <em>te fac să visezi</em>" data-en="Places that <em>make you dream</em>">Locuri care <em>te fac să visezi</em></h2>
+  <div class="gallery-scroll">
+    <img class="gallery-img" src="https://www.turistinfo.ro/images/cazare/354071.jpg" alt="Pensiunea" loading="lazy" onclick="openLightbox(this.src)">
+    <img class="gallery-img" src="https://www.turistinfo.ro/images/cazare/862018.jpg" alt="Terasa" loading="lazy" onclick="openLightbox(this.src)">
+    <img class="gallery-img" src="https://www.turistinfo.ro/images/cazare/354068.jpg" alt="Camera" loading="lazy" onclick="openLightbox(this.src)">
+    <img class="gallery-img" src="https://www.turistinfo.ro/images/cazare/862008.jpg" alt="Interior" loading="lazy" onclick="openLightbox(this.src)">
+    <img class="gallery-img" src="https://www.turistinfo.ro/images/cazare/862014.jpg" alt="Camera 2" loading="lazy" onclick="openLightbox(this.src)">
+    <img class="gallery-img" src="https://www.turistinfo.ro/images/cazare/862009.jpg" alt="Baie" loading="lazy" onclick="openLightbox(this.src)">
+    <img class="gallery-img" src="https://www.turistinfo.ro/images/cazare/862011.jpg" alt="Vedere" loading="lazy" onclick="openLightbox(this.src)">
+    <img class="gallery-img" src="https://www.turistinfo.ro/images/cazare/354056.jpg" alt="Exterior" loading="lazy" onclick="openLightbox(this.src)">
+    <img class="gallery-img" src="https://www.turistinfo.ro/images/cazare/354063.jpg" alt="Natura" loading="lazy" onclick="openLightbox(this.src)">
+    <img class="gallery-img" src="https://www.turistinfo.ro/images/cazare/862016.jpg" alt="Dunărea" loading="lazy" onclick="openLightbox(this.src)">
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section class="facilities" id="sec-facilities">
+  <span class="section-label reveal" data-ro="Ce oferim" data-en="What we offer">Ce oferim</span>
+  <h2 class="section-title reveal" data-ro="<em>Facilități</em> principale" data-en="Main <em>facilities</em>"><em>Facilități</em> principale</h2>
+
+  <div class="facilities-grid">
+    <div class="facility-card reveal">
+      <div class="facility-icon">🌊</div>
+      <div class="facility-name" data-ro="Vedere la Dunăre" data-en="Danube view">Vedere la Dunăre</div>
+    </div>
+    <div class="facility-card reveal">
+      <div class="facility-icon">🏊</div>
+      <div class="facility-name" data-ro="Piscină" data-en="Swimming pool">Piscină</div>
+    </div>
+    <div class="facility-card reveal">
+      <div class="facility-icon">🌿</div>
+      <div class="facility-name" data-ro="Grădină & Curte" data-en="Garden & Yard">Grădină & Curte</div>
+    </div>
+    <div class="facility-card reveal">
+      <div class="facility-icon">☕</div>
+      <div class="facility-name" data-ro="Restaurant" data-en="Restaurant">Restaurant</div>
+    </div>
+    <div class="facility-card reveal">
+      <div class="facility-icon">📶</div>
+      <div class="facility-name" data-ro="WiFi gratuit" data-en="Free WiFi">WiFi gratuit</div>
+    </div>
+    <div class="facility-card reveal">
+      <div class="facility-icon">🅿️</div>
+      <div class="facility-name" data-ro="Parcare gratuită" data-en="Free parking">Parcare gratuită</div>
+    </div>
+    <div class="facility-card reveal">
+      <div class="facility-icon">⛵</div>
+      <div class="facility-name" data-ro="Debarcader & Pescuit" data-en="Dock & Fishing">Debarcader & Pescuit</div>
+    </div>
+    <div class="facility-card reveal">
+      <div class="facility-icon">🚢</div>
+      <div class="facility-name" data-ro="Plimbări cu vaporul" data-en="Boat rides">Plimbări cu vaporul</div>
+    </div>
+    <div class="facility-card reveal">
+      <div class="facility-icon">🏖️</div>
+      <div class="facility-name" data-ro="Șezlonguri & Umbrelute" data-en="Sunbeds & Umbrellas">Șezlonguri & Umbrelute</div>
+    </div>
+    <div class="facility-card reveal">
+      <div class="facility-icon">🏡</div>
+      <div class="facility-name" data-ro="Foișor & Terasă" data-en="Gazebo & Terrace">Foișor & Terasă</div>
+    </div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+<section class="rooms" id="sec-rooms">
+  <span class="section-label reveal" data-ro="Cazare" data-en="Accommodation">Cazare</span>
+  <h2 class="section-title reveal" data-ro="Camerele <em>noastre</em>" data-en="Our <em>rooms</em>">Camerele <em>noastre</em></h2>
+  <p class="section-body reveal" data-ro="6 camere duble cu grup sanitar propriu, toate cu vedere la Dunăre și balcon." data-en="6 double rooms with private bathroom, all with Danube view and balcony.">
+    6 camere duble cu grup sanitar propriu, toate cu vedere la Dunăre și balcon.
+  </p>
+  <div class="rooms-list">
+    <div class="room-row reveal">
+      <div class="room-info">
+        <div class="room-type" data-ro="Cameră dublă cu vedere la Dunăre" data-en="Double room with Danube view">Cameră dublă cu vedere la Dunăre</div>
+        <div class="room-detail" data-ro="Balcon · Baie privată · TV · AC" data-en="Balcony · Private bath · TV · AC">Balcon · Baie privată · TV · AC</div>
+      </div>
+      <div class="room-price">
+        <span class="price-val">300</span>
+        <span class="price-note">RON/noapte</span>
+      </div>
+    </div>
+    <div class="room-row reveal">
+      <div class="room-info">
+        <div class="room-type" data-ro="Mic dejun opțional" data-en="Optional breakfast">Mic dejun opțional</div>
+        <div class="room-detail" data-ro="La cerere" data-en="On request">La cerere</div>
+      </div>
+      <div class="room-price">
+        <span class="price-val">30</span>
+        <span class="price-note">RON/persoană</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="amenities" id="sec-amenities">
+  <span class="section-label reveal" data-ro="Dotări complete" data-en="Full amenities">Dotări complete</span>
+  <h2 class="section-title reveal" data-ro="Tot ce ai <em>nevoie</em>" data-en="Everything you <em>need</em>">Tot ce ai <em>nevoie</em></h2>
+
+  <div class="amenity-group reveal">
+    <div class="amenity-group-title" data-ro="Camere" data-en="Rooms">Camere</div>
+    <div class="amenity-items" id="room-amenities">
+      <span class="amenity-tag" data-ro="Aer condiționat" data-en="Air conditioning">Aer condiționat</span>
+      <span class="amenity-tag" data-ro="Balcon" data-en="Balcony">Balcon</span>
+      <span class="amenity-tag" data-ro="Cabină de duș" data-en="Shower cabin">Cabină de duș</span>
+      <span class="amenity-tag" data-ro="TV prin cablu/satelit" data-en="Cable/satellite TV">TV prin cablu/satelit</span>
+      <span class="amenity-tag" data-ro="Dulap/garderobă" data-en="Wardrobe">Dulap/garderobă</span>
+      <span class="amenity-tag" data-ro="Lenjerie de pat" data-en="Bed linen">Lenjerie de pat</span>
+      <span class="amenity-tag" data-ro="Prosoape" data-en="Towels">Prosoape</span>
+      <span class="amenity-tag" data-ro="Uscător de păr" data-en="Hairdryer">Uscător de păr</span>
+      <span class="amenity-tag" data-ro="Plasă țânțari" data-en="Mosquito net">Plasă țânțari</span>
+      <span class="amenity-tag" data-ro="Umerașe" data-en="Hangers">Umerașe</span>
+    </div>
+  </div>
+
+  <div class="amenity-group reveal">
+    <div class="amenity-group-title" data-ro="Zone comune" data-en="Common areas">Zone comune</div>
+    <div class="amenity-items">
+      <span class="amenity-tag" data-ro="Bar" data-en="Bar">Bar</span>
+      <span class="amenity-tag" data-ro="Sală de mese" data-en="Dining room">Sală de mese</span>
+      <span class="amenity-tag" data-ro="Foișor" data-en="Gazebo">Foișor</span>
+      <span class="amenity-tag" data-ro="Terasă la soare" data-en="Sun terrace">Terasă la soare</span>
+      <span class="amenity-tag" data-ro="Grădină" data-en="Garden">Grădină</span>
+    </div>
+  </div>
+
+  <div class="amenity-group reveal">
+    <div class="amenity-group-title" data-ro="Securitate & Alte servicii" data-en="Security & Other services">Securitate & Alte servicii</div>
+    <div class="amenity-items">
+      <span class="amenity-tag" data-ro="Alarmă de fum" data-en="Smoke alarm">Alarmă de fum</span>
+      <span class="amenity-tag" data-ro="Extinctoare" data-en="Fire extinguishers">Extinctoare</span>
+      <span class="amenity-tag" data-ro="Fier de călcat" data-en="Iron">Fier de călcat</span>
+      <span class="amenity-tag" data-ro="Parcare" data-en="Parking">Parcare</span>
+    </div>
+  </div>
+</section>
+
+<!-- POLICIES -->
+<section class="policies" id="sec-policies">
+  <span class="section-label reveal" data-ro="Informații practice" data-en="Practical info">Informații practice</span>
+  <h2 class="section-title reveal" data-ro="Politici & <em>Condiții</em>" data-en="Policies & <em>Conditions</em>">Politici & <em>Condiții</em></h2>
+
+  <div class="policy-cards">
+    <div class="policy-card reveal">
+      <div class="policy-card-title" data-ro="Check-in / Check-out" data-en="Check-in / Check-out">Check-in / Check-out</div>
+      <div class="policy-card-text" data-ro="Check-in: 14:00 – 14:30<br>Check-out: 12:00 – 12:30" data-en="Check-in: 14:00 – 14:30<br>Check-out: 12:00 – 12:30">Check-in: 14:00 – 14:30<br>Check-out: 12:00 – 12:30</div>
+    </div>
+    <div class="policy-card reveal">
+      <div class="policy-card-title" data-ro="Copii" data-en="Children">Copii</div>
+      <div class="policy-card-text" data-ro="Acceptăm copii de toate vârstele." data-en="We welcome children of all ages.">Acceptăm copii de toate vârstele.</div>
+    </div>
+    <div class="policy-card reveal">
+      <div class="policy-card-title" data-ro="Plata" data-en="Payment">Plata</div>
+      <div class="policy-card-text" data-ro="Numerar, card, transfer bancar, carduri de vacanță." data-en="Cash, card, bank transfer, holiday vouchers.">Numerar, card, transfer bancar, carduri de vacanță.</div>
+    </div>
+    <div class="policy-card reveal">
+      <div class="policy-card-title" data-ro="Fumat" data-en="Smoking">Fumat</div>
+      <div class="policy-card-text" data-ro="Permis în zone speciale la exterior." data-en="Permitted in designated outdoor areas.">Permis în zone speciale la exterior.</div>
+    </div>
+    <div class="policy-card reveal">
+      <div class="policy-card-title" data-ro="Mese" data-en="Meals">Mese</div>
+      <div class="policy-card-text" data-ro="Tarifele includ doar cazarea. Mic dejun opțional: 30 RON/persoană." data-en="Rates include accommodation only. Optional breakfast: 30 RON/person.">Tarifele includ doar cazarea. Mic dejun opțional: 30 RON/persoană.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="sec-contact">
+  <span class="section-label reveal" data-ro="Rezervați acum" data-en="Book now">Rezervați acum</span>
+  <h2 class="section-title reveal" data-ro="Ne bucurăm să <em>vă primim</em>" data-en="We look forward to <em>welcoming you</em>">Ne bucurăm să <em>vă primim</em></h2>
+
+  <div class="contact-detail reveal">
+    <div class="dot"></div>
+    <span data-ro="Str. Dunării, nr. 960, Eșelnița, Mehedinți" data-en="Str. Dunării, no. 960, Eșelnița, Mehedinți">Str. Dunării, nr. 960, Eșelnița, Mehedinți</span>
+  </div>
+
+  <a href="tel:+40790759787" class="contact-phone reveal">0790 759 787</a>
+  <p class="contact-name reveal" data-ro="Ani Rișcu — proprietar" data-en="Ani Rișcu — owner">Ani Rișcu — proprietar</p>
+
+  <div class="contact-btns reveal">
+    <a href="tel:+40790759787" class="btn-call" data-ro="📞 Sună acum" data-en="📞 Call now">📞 Sună acum</a>
+    <a href="sms:+40790759787;?&body=Bună ziua! Aș dori să fac o rezervare la Pensiunea Doina." class="btn-sms" data-ro="💬 Trimite SMS" data-en="💬 Send SMS">💬 Trimite SMS</a>
+  </div>
+</section>
+
+<!-- MAP -->
+<div class="map-section">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2836.837144927534!2d22.34531147598219!3d44.68210497107194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475186c38869ebc5%3A0xda5678ec5ee95b3a!2sPensiunea%20Doina!5e0!3m2!1sro!2sro!4v1775223870343!5m2!1sro!2sro"
+	title="Locatie Pensiunea Doina"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p data-ro="© 2025 Pensiunea Doina · Eșelnița, Mehedinți · Toate drepturile rezervate" data-en="© 2025 Pensiunea Doina · Eșelnița, Mehedinți · All rights reserved">© 2025 Pensiunea Doina · Eșelnița, Mehedinți · Toate drepturile rezervate</p>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="Preview">
+</div>
+
+<script>
+// ── LANGUAGE ──
+let currentLang = 'ro';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('#lang-bar button').forEach(b => b.classList.remove('active'));
+  document.querySelector(`#lang-bar button:${lang==='ro'?'first':'last'}-child`).classList.add('active');
+  document.querySelectorAll('[data-ro]').forEach(el => {
+    const val = el.getAttribute('data-' + lang);
+    if (val) el.innerHTML = val;
+  });
+}
+
+// ── SCROLL REVEAL ──
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(r => observer.observe(r));
+
+// ── LIGHTBOX ──
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>
