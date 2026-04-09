@@ -102,3 +102,21 @@ function slideGallery(direction) {
     });
   }
 })();
+
+// ── THEME TOGGLE ──
+const themeToggle = document.getElementById('theme-toggle');
+if (themeToggle) {
+  // Check initial state set by head script
+  if (document.documentElement.getAttribute('data-theme') === 'dark') {
+    themeToggle.textContent = '☀️';
+  }
+
+  themeToggle.addEventListener('click', () => {
+    let currentTheme = document.documentElement.getAttribute('data-theme');
+    let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+  });
+}

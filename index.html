@@ -12,6 +12,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pensiunea Doina — Eșelnița, pe malul Dunării | Cazare 3★</title>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
   <meta name="description"
     content="Pensiunea Doina din Eșelnița, Mehedinți — cazare, restaurant și debarcader. Rezervă acum camera ta cu balcon!">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,10 +59,13 @@
     </button>
   </nav>
 
-  <!-- Language Switcher -->
-  <div id="lang-bar">
-    <button class="active" onclick="setLang('ro')">RO</button>
-    <button onclick="setLang('en')">EN</button>
+  <!-- Floating Controls -->
+  <div id="floating-controls">
+    <div id="lang-bar">
+      <button class="active" onclick="setLang('ro')">RO</button>
+      <button onclick="setLang('en')">EN</button>
+    </div>
+    <button id="theme-toggle" aria-label="Comută Tema" title="Tema Întunecată / Luminoasă">🌙</button>
   </div>
 
   <!-- ═══════════════════════════════════════════
@@ -122,6 +133,11 @@
           Camere</button>
       </form>
       <!-- END MOTOPRESS PLACEHOLDER -->
+    </div>
+
+    <!-- Meniu Button -->
+    <div style="text-align: center; margin-top: 36px;" class="reveal">
+      <a href="Meniu.pdf" target="_blank" class="btn-primary" style="background: var(--white); color: var(--river-deep); border: 2px solid var(--river-light); box-shadow: var(--shadow-medium);" data-ro="🍴 Vezi Meniul Restaurantului" data-en="🍴 View Restaurant Menu">🍴 Vezi Meniul Restaurantului</a>
     </div>
   </div>
 
