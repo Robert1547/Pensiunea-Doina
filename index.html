@@ -6,12 +6,61 @@
   <meta name="description" content="Pensiunea Doina din Eșelnița, Mehedinți — cazare, restaurant și debarcader. Rezervă acum camera ta cu balcon direct spre Dunăre!" />
   <title>Pensiunea Doina Eșelnița</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" href="Poze/pensiunea.jpeg" />
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts — async (nu blocheaza randul) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" /></noscript>
+
+  <!-- CSS principal — inline critical + async rest -->
+  <style>
+    /* CRITICAL CSS — tot ce e vizibil fara scroll (above the fold) */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{font-family:'Lato',sans-serif;background:#faf8f4;color:#2c2218;line-height:1.7;overflow-x:hidden}
+    [data-theme="dark"] body,[data-theme="dark"]{background:#1a1410;color:#f0e8dc}
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:transparent;transition:background .3s ease,box-shadow .3s ease}
+    #navbar.scrolled{background:rgba(250,248,244,0.95);box-shadow:0 2px 8px rgba(44,34,24,.08);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+    [data-theme="dark"] #navbar.scrolled{background:rgba(26,20,16,0.96)}
+    .nav-inner{max-width:1180px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem);height:68px;display:flex;align-items:center;gap:1.5rem}
+    .nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:1.35rem;font-weight:700;color:#2c2218;white-space:nowrap;flex-shrink:0}
+    #navbar:not(.scrolled) .nav-logo,#navbar:not(.scrolled) #nav-links a,#navbar:not(.scrolled) #lang-bar button,#navbar:not(.scrolled) #theme-toggle{color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+    #nav-links{display:flex;align-items:center;gap:.2rem;margin-left:auto;flex-wrap:nowrap}
+    #nav-links a{padding:.4rem .7rem;font-size:.9rem;font-weight:600;border-radius:8px;transition:background .3s ease,color .3s ease;white-space:nowrap;color:#2c2218;text-decoration:none}
+    .nav-right{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
+    #lang-bar{display:flex;gap:.2rem}
+    #lang-bar button{background:none;border:1px solid #e2d9cc;border-radius:4px;padding:.3rem .6rem;font-size:.75rem;font-weight:700;cursor:pointer;color:#2c2218;transition:all .3s ease}
+    #lang-bar button.active,#lang-bar button:hover{background:#8b5c2a;color:#fff;border-color:#8b5c2a}
+    #theme-toggle{background:none;border:1px solid #e2d9cc;border-radius:50%;width:36px;height:36px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;flex-shrink:0}
+    .btn-booking{display:inline-flex;align-items:center;gap:.4rem;padding:.75rem 1.75rem;border-radius:8px;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .3s ease;white-space:nowrap;border:2px solid #003580;background:#003580;color:#fff}
+    .btn-booking:hover{background:#002a6a;border-color:#002a6a;transform:translateY(-2px)}
+    .btn-nav-book{background:#8b5c2a;color:#fff!important;padding:.5rem 1.1rem;font-size:.88rem;border-radius:8px;display:inline-flex;align-items:center;gap:.4rem;font-weight:700;transition:all .3s ease;border:2px solid transparent}
+    .btn-nav-book:hover{background:#6b4420}
+    #hero{position:relative;height:100dvh;min-height:560px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.06);animation:heroZoom 18s ease-in-out infinite alternate}
+    @keyframes heroZoom{from{transform:scale(1.06)}to{transform:scale(1)}}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.35) 0%,rgba(0,0,0,.5) 50%,rgba(0,0,0,.65) 100%)}
+    .hero-content{position:relative;z-index:2;text-align:center;color:#fff;padding:0 1.5rem;animation:fadeUp 1s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    .hero-tag{font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:1rem}
+    .hero-content h1{color:#fff;margin-bottom:.6rem;text-shadow:0 2px 16px rgba(0,0,0,.4);font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.4rem,6vw,4.5rem);font-weight:700;line-height:1.2}
+    .hero-sub{font-size:1.15rem;color:rgba(255,255,255,.85);margin-bottom:2.2rem;letter-spacing:.04em}
+    .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    .hero-btns .btn-secondary{color:#fff;border-color:rgba(255,255,255,.6);background:transparent;border:2px solid rgba(255,255,255,.6);display:inline-flex;align-items:center;gap:.4rem;padding:.75rem 1.75rem;border-radius:8px;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .3s ease}
+    .hero-btns .btn-secondary:hover{background:rgba(255,255,255,.15);border-color:#fff;color:#fff}
+    .hero-scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;opacity:.7;animation:bounce 2s ease infinite}
+    .scroll-arrow{display:block;width:22px;height:22px;border-right:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(45deg)}
+    @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:none}
+    @media(max-width:768px){#nav-links{display:none}#theme-toggle{display:none}.nav-social{display:none}}
+  </style>
+  <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="style.css" /></noscript>
 
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GXLL1CL1X2"></script>
