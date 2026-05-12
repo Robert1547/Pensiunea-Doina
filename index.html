@@ -1,566 +1,525 @@
 <!DOCTYPE html>
-<html lang="ro">
-
+<html lang="ro" data-theme="light">
 <head>
-  <script src="https://cdn.cookiehub.eu/c2/98d456b5.js"></script>
-  <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function (event) {
-      var cpm = {};
-      window.cookiehub.load(cpm);
-    });
-  </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pensiunea Doina din Eșelnița, Mehedinți — cazare, restaurant și debarcader. Rezervă acum camera ta cu balcon direct spre Dunăre!" />
   <title>Pensiunea Doina — Eșelnița, pe malul Dunării | Cazare 3★</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GXLL1CL1X2"></script>
   <script>
-    (function() {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GXLL1CL1X2');
+  </script>
+
+  <!-- Theme init (no flash) -->
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if(t) document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <meta name="description"
-    content="Pensiunea Doina din Eșelnița, Mehedinți — cazare, restaurant și debarcader. Rezervă acum camera ta cu balcon!">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GXLL1CL1X2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-
-  gtag('config', 'G-GXLL1CL1X2');
-</script>
-
 <body>
 
-  <!-- ═══════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════
      NAVBAR
-     ═══════════════════════════════════════════ -->
-  <nav class="navbar" id="navbar">
+═══════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
     <a href="#" class="nav-logo">Pensiunea <em>Doina</em></a>
-    <div class="nav-links" id="nav-links">
-      <a href="#sec-about" data-ro="Despre Noi" data-en="About Us" onclick="closeMenu()">Despre Noi</a>
-      <a href="#sec-rooms" data-ro="Camere" data-en="Rooms" onclick="closeMenu()">Camere</a>
-      <a href="#sec-gallery" data-ro="Galerie" data-en="Gallery" onclick="closeMenu()">Galerie</a>
-      <a href="#sec-contact" data-ro="Contact" data-en="Contact" onclick="closeMenu()">Contact</a>
-      <a href="Meniu.pdf" data-ro="Meniu" data-en="Menu" onclick="closeMenu()">Meniu</a>
-      <a href="#sec-rezervari" class="btn-nav-book" data-ro="Rezervă" data-en="Book" onclick="closeMenu()">Rezervă</a>
-    </div>
-    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meniu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
 
-  <!-- Floating Controls -->
-  <div id="floating-controls">
-    <div id="lang-bar">
-      <button class="active" onclick="setLang('ro')">RO</button>
-      <button onclick="setLang('en')">EN</button>
+    <ul id="nav-links">
+      <li><a href="#sec-about" data-ro="Despre Noi" data-en="About Us">Despre Noi</a></li>
+      <li><a href="#sec-rooms" data-ro="Camere" data-en="Rooms">Camere</a></li>
+      <li><a href="#sec-gallery" data-ro="Galerie" data-en="Gallery">Galerie</a></li>
+      <li><a href="#sec-contact" data-ro="Contact" data-en="Contact">Contact</a></li>
+      <li>
+        <a href="https://www.booking.com/hotel/ro/pensiunea-doina-eselnita.ro.html?aid=356980&label=gog235jc-10CAsowAFCGHBlbnNpdW5lYS1kb2luYS1lc2Vsbml0YUgzWANowAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqDVi9AGwAIB0gIkNWUyYTBjYTYtOTM3ZC00OTdhLTg0ZWItYWIxYTQ1YjZlYTRm2AIB4AIB-Share-BOUED3u%401778604318-Share-OUcx0wK%401778604389&sid=f322880ceac32db7dd252f21f2a11840&all_sr_blocks=1637424702_434086289_2_2_0&checkin=2026-05-13&checkout=2026-05-15&dest_id=-1158940&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1637424702_434086289_2_2_0&hpos=1&matching_block_id=1637424702_434086289_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1637424702_434086289_2_2_0__60000&srepoch=1778604405&srpvid=7aa975f7387a00ec&type=total&ucfs=1&"
+           target="_blank" rel="noopener" class="btn-nav-book"
+           data-ro="📅 Rezervă" data-en="📅 Book Now">📅 Rezervă</a>
+      </li>
+    </ul>
+
+    <div class="nav-right">
+      <div id="lang-bar">
+        <button onclick="setLang('ro')" class="active">RO</button>
+        <button onclick="setLang('en')">EN</button>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
     </div>
-    <button id="theme-toggle" aria-label="Comută Tema" title="Tema Întunecată / Luminoasă">🌙</button>
   </div>
+</nav>
 
-  <!-- ═══════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════
      HERO
-     ═══════════════════════════════════════════ -->
-  <section class="hero" id="sec-hero">
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span>📍</span>
-        <span data-ro="Eșelnița, Mehedinți" data-en="Eșelnița, Mehedinți County">Eșelnița, Mehedinți</span>
-      </div>
-      <div class="hero-stars">★★★</div>
-      <h1>Pensiunea<br><em>Doina</em></h1>
-      <p class="hero-sub" data-ro="Pe malul Dunării · Cazanele Dunării"
-        data-en="On the Danube riverbank · Danube Gorges">Pe malul Dunării · Cazanele Dunării</p>
-      <div class="hero-cta">
-        <a href="#sec-rezervari" class="btn-primary" data-ro="📅 Rezervă acum" data-en="📅 Book now">📅 Rezervă acum</a>
-        <a href="#sec-gallery" class="btn-outline" data-ro="Vezi galeria" data-en="View gallery">Vezi galeria</a>
-      </div>
-    </div>
-    <div class="scroll-hint">
-      <div class="scroll-line"></div>
-      <span data-ro="Descoperă" data-en="Discover">Descoperă</span>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-     BOOKING SECTION (MotoPress Integration)
-     ═══════════════════════════════════════════ -->
-  <div class="booking-section" id="sec-rezervari">
-    <div class="booking-card reveal">
-      <div class="booking-header">
-        <h2 class="booking-title" data-ro="Verifică <em>Disponibilitatea</em>" data-en="Check <em>Availability</em>">
-          Verifică <em>Disponibilitatea</em></h2>
-        <p class="booking-subtitle" data-ro="Selectează datele dorite și verifică camerele libere"
-          data-en="Select your dates and check room availability">Selectează datele dorite și verifică camerele libere
-        </p>
-      </div>
-
-      <!-- ╔═══════════════════════════════════════════════════════╗
-         ║  MOTOPRESS HOTEL BOOKING — INTEGRATION AREA          ║
-         ║  Înlocuiți formularul de mai jos cu shortcode-ul:    ║
-         ║  [mphb_availability_search]                          ║
-         ╚═══════════════════════════════════════════════════════╝ -->
-      <form class="mphb-placeholder" id="booking-form" action="#sec-rezervari"
-        onsubmit="event.preventDefault(); alert('Formularul va fi înlocuit de MotoPress Hotel Booking.');">
-        <div class="mphb-field">
-          <label for="checkin" data-ro="Check-in" data-en="Check-in">Check-in</label>
-          <input type="date" id="checkin" required>
-        </div>
-        <div class="mphb-field">
-          <label for="checkout" data-ro="Check-out" data-en="Check-out">Check-out</label>
-          <input type="date" id="checkout" required>
-        </div>
-        <div class="mphb-field">
-          <label for="guests" data-ro="Adulți" data-en="Adults">Adulți</label>
-          <select id="guests">
-            <option>1</option>
-            <option selected>2</option>
-            <option>3</option>
-            <option>4</option>
-          </select>
-        </div>
-        <button type="submit" class="mphb-submit" data-ro="🔍 Caută Camere" data-en="🔍 Search Rooms">🔍 Caută
-          Camere</button>
-      </form>
-      <!-- END MOTOPRESS PLACEHOLDER -->
-    </div>
-
-    <!-- Meniu Button -->
-    <div style="text-align: center; margin-top: 36px;" class="reveal">
-      <a href="Meniu.pdf" target="_blank" class="btn-primary" style="background: var(--white); color: var(--river-deep); border: 2px solid var(--river-light); box-shadow: var(--shadow-medium);" data-ro="🍴 Vezi Meniul Restaurantului" data-en="🍴 View Restaurant Menu">🍴 Vezi Meniul Restaurantului</a>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-     ABOUT
-     ═══════════════════════════════════════════ -->
-  <section class="about" id="sec-about">
-    <span class="section-label reveal" data-ro="Despre noi" data-en="About us">Despre noi</span>
-    <h2 class="section-title reveal" data-ro="O oază de liniște <em>pe Dunăre</em>"
-      data-en="An oasis of calm <em>on the Danube</em>">O oază de liniște <em>pe Dunăre</em></h2>
-    <p class="section-body reveal"
-      data-ro="Situată pe DN57, pe șoseaua ce leagă Orșova de Moldova Nouă, la 2 km de ieșirea din com. Eșelnița, Pensiunea Doina vă oferă o priveliște de vis direct spre Dunăre. De pe terasă, fluviul îți răsfață privirea cu toată splendoarea lui — locul ideal pentru relaxare și odihnă."
-      data-en="Located on DN57, on the road linking Orșova to Moldova Nouă, just 2 km from Eșelnița, Pensiunea Doina offers a dream view directly onto the Danube. From the terrace, the river mesmerizes you with its full splendor — the ideal spot for rest and relaxation.">
-      Situată pe DN57, pe șoseaua ce leagă Orșova de Moldova Nouă, la 2 km de ieșirea din com. Eșelnița, Pensiunea Doina
-      vă oferă o priveliște de vis direct spre Dunăre. De pe terasă, fluviul îți răsfață privirea cu toată splendoarea
-      lui — locul ideal pentru relaxare și odihnă.
+═══════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg" style="background-image: url('Poze/pensiunea.jpeg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-tag">📍 Eșelnița, Mehedinți · ★★★</p>
+    <h1>Pensiunea <em>Doina</em></h1>
+    <p class="hero-sub" data-ro="Pe malul Dunării · Cazanele Dunării" data-en="On the Danube shore · Cazanele Dunării">
+      Pe malul Dunării · Cazanele Dunării
     </p>
-
-    <div class="about-grid reveal">
-      <div class="about-img-stack">
-        <img class="img-main" src="Poze/vedere-dunare-peisaj-2.jpeg"
-          alt="Vedere panoramică Dunăre de la Pensiunea Doina" loading="lazy">
-        <img class="img-accent" src="Poze/Exterior spre pensiune jos.jpeg" alt="Terasă cu vedere la Dunăre"
-          loading="lazy">
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-     STATS
-     ═══════════════════════════════════════════ -->
-  <div class="stats-strip">
-    <div class="stat-item reveal">
-      <span class="stat-num">6</span>
-      <span class="stat-label" data-ro="Camere duble" data-en="Double rooms">Camere duble</span>
-    </div>
-    <div class="stat-item reveal">
-      <span class="stat-num">12</span>
-      <span class="stat-label" data-ro="Locuri disponibile" data-en="Available spots">Locuri disponibile</span>
-    </div>
-    <div class="stat-item reveal">
-      <span class="stat-num">★★★</span>
-      <span class="stat-label" data-ro="Clasificare" data-en="Classification">Clasificare</span>
-    </div>
-    <div class="stat-item reveal">
-      <span class="stat-num">980+</span>
-      <span class="stat-label" data-ro="Recenzii pozitive" data-en="Positive reviews">Recenzii pozitive</span>
+    <div class="hero-btns">
+      <a href="https://www.booking.com/hotel/ro/pensiunea-doina-eselnita.ro.html?aid=356980&label=gog235jc-10CAsowAFCGHBlbnNpdW5lYS1kb2luYS1lc2Vsbml0YUgzWANowAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqDVi9AGwAIB0gIkNWUyYTBjYTYtOTM3ZC00OTdhLTg0ZWItYWIxYTQ1YjZlYTRm2AIB4AIB-Share-BOUED3u%401778604318-Share-OUcx0wK%401778604389&sid=f322880ceac32db7dd252f21f2a11840&all_sr_blocks=1637424702_434086289_2_2_0&checkin=2026-05-13&checkout=2026-05-15&dest_id=-1158940&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1637424702_434086289_2_2_0&hpos=1&matching_block_id=1637424702_434086289_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1637424702_434086289_2_2_0__60000&srepoch=1778604405&srpvid=7aa975f7387a00ec&type=total&ucfs=1&"
+         target="_blank" rel="noopener" class="btn-booking"
+         data-ro="📅 Rezervă pe Booking.com" data-en="📅 Book on Booking.com">📅 Rezervă pe Booking.com</a>
+      <a href="#sec-gallery" class="btn-secondary"
+         data-ro="Vezi galeria" data-en="View Gallery">Vezi galeria</a>
     </div>
   </div>
+  <a href="#sec-about" class="hero-scroll-hint" aria-label="Scroll down">
+    <span class="scroll-arrow"></span>
+  </a>
+</section>
 
-  <!-- ═══════════════════════════════════════════
-     ROOMS
-     ═══════════════════════════════════════════ -->
-  <section class="rooms" id="sec-rooms">
-    <span class="section-label reveal" data-ro="Cazare" data-en="Accommodation">Cazare</span>
-    <h2 class="section-title reveal" data-ro="Camerele <em>noastre</em>" data-en="Our <em>rooms</em>">Camerele
-      <em>noastre</em>
+<!-- ═══════════════════════════════════════════════
+     ABOUT
+═══════════════════════════════════════════════ -->
+<section id="sec-about" class="section">
+  <div class="container">
+    <p class="section-eyebrow" data-ro="Despre noi" data-en="About us">Despre noi</p>
+    <h2 data-ro="O oază de liniște <em>pe Dunăre</em>" data-en="A peaceful oasis <em>on the Danube</em>">
+      O oază de liniște <em>pe Dunăre</em>
     </h2>
-    <p class="section-body reveal" data-ro="Camere duble cu grup sanitar propriu, fiecare cu balcon."
-      data-en="Double rooms with private bathroom, each with balcony.">
+    <div class="about-layout">
+      <div class="about-text reveal">
+        <p data-ro="Situată pe DN57, pe șoseaua ce leagă Orșova de Moldova Nouă, la 2 km de ieșirea din com. Eșelnița, Pensiunea Doina vă oferă o priveliște de vis direct spre Dunăre. De pe terasă, fluviul îți răsfață privirea cu toată splendoarea lui — locul ideal pentru relaxare și odihnă."
+           data-en="Located on DN57, on the road connecting Orșova to Moldova Nouă, 2 km from Eșelnița, Pensiunea Doina offers a dream view directly towards the Danube. From the terrace, the river delights the eye with all its splendor — the ideal place for relaxation and rest.">
+          Situată pe DN57, pe șoseaua ce leagă Orșova de Moldova Nouă, la 2 km de ieșirea din com. Eșelnița, Pensiunea Doina
+          vă oferă o priveliște de vis direct spre Dunăre. De pe terasă, fluviul îți răsfață privirea cu toată splendoarea
+          lui — locul ideal pentru relaxare și odihnă.
+        </p>
+        <div class="stats-row">
+          <div class="stat"><strong>6</strong><span data-ro="Camere duble" data-en="Double rooms">Camere duble</span></div>
+          <div class="stat"><strong>12</strong><span data-ro="Locuri disponibile" data-en="Available spots">Locuri disponibile</span></div>
+          <div class="stat"><strong>★★★</strong><span data-ro="Clasificare" data-en="Rating">Clasificare</span></div>
+          <div class="stat"><strong>980+</strong><span data-ro="Recenzii pozitive" data-en="Positive reviews">Recenzii pozitive</span></div>
+        </div>
+      </div>
+      <div class="about-images reveal">
+        <img src="Poze/vedere-dunare-peisaj-2.jpeg" alt="Vedere panoramică Dunăre" loading="lazy" onclick="openLightboxSingle(this.src)" />
+        <img src="Poze/Exterior spre pensiune jos.jpeg" alt="Exterior Pensiunea Doina" loading="lazy" onclick="openLightboxSingle(this.src)" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     ROOMS
+═══════════════════════════════════════════════ -->
+<section id="sec-rooms" class="section section-alt">
+  <div class="container">
+    <p class="section-eyebrow" data-ro="Cazare" data-en="Accommodation">Cazare</p>
+    <h2 data-ro="Camerele <em>noastre</em>" data-en="Our <em>Rooms</em>">Camerele <em>noastre</em></h2>
+    <p class="section-sub" data-ro="Camere duble cu grup sanitar propriu, fiecare cu balcon." data-en="Double rooms with private bathroom, each with a balcony.">
       Camere duble cu grup sanitar propriu, fiecare cu balcon.
     </p>
 
     <div class="rooms-grid">
+
       <!-- Camera 1 -->
       <div class="room-card reveal">
-        <img class="room-card-img" src="Poze/camera-dubla-eleganta-2.jpeg" alt="Camera 1" loading="lazy">
-        <div class="room-card-body">
-          <div class="room-card-type" data-ro="Camera 1" data-en="Room 1">Camera 1</div>
-          <div class="room-card-detail" data-ro="Balcon · Baie privată · TV · AC"
-            data-en="Balcony · Private bath · TV · AC">Balcon · Baie privată · TV · AC</div>
-          <div class="room-card-footer">
-            <div>
-              <div class="room-card-price">
-                <span class="price-val">300</span>
-                <span class="price-currency">RON</span>
-              </div>
-              <span class="price-note" data-ro="/noapte" data-en="/night">/noapte</span>
-            </div>
-            <a href="#sec-rezervari" class="room-card-cta" data-ro="Rezervă" data-en="Book">Rezervă</a>
+        <div class="room-thumb" onclick="openRoomLightbox(1)">
+          <img src="Poze/Camere/Camera 1/Camera 1.jpg" alt="Camera 1" loading="lazy" />
+          <span class="room-gallery-hint">📷 Vezi galeria</span>
+        </div>
+        <div class="room-info">
+          <h3 data-ro="Camera 1" data-en="Room 1">Camera 1</h3>
+          <p class="room-features" data-ro="Balcon · Baie privată · TV · AC" data-en="Balcony · Private bath · TV · AC">Balcon · Baie privată · TV · AC</p>
+          <div class="room-footer">
+            <span class="room-price">300 RON<small data-ro="/noapte" data-en="/night">/noapte</small></span>
+            <a href="https://www.booking.com/hotel/ro/pensiunea-doina-eselnita.ro.html?aid=356980&label=gog235jc-10CAsowAFCGHBlbnNpdW5lYS1kb2luYS1lc2Vsbml0YUgzWANowAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqDVi9AGwAIB0gIkNWUyYTBjYTYtOTM3ZC00OTdhLTg0ZWItYWIxYTQ1YjZlYTRm2AIB4AIB-Share-BOUED3u%401778604318-Share-OUcx0wK%401778604389&sid=f322880ceac32db7dd252f21f2a11840&all_sr_blocks=1637424702_434086289_2_2_0&checkin=2026-05-13&checkout=2026-05-15&dest_id=-1158940&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1637424702_434086289_2_2_0&hpos=1&matching_block_id=1637424702_434086289_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1637424702_434086289_2_2_0__60000&srepoch=1778604405&srpvid=7aa975f7387a00ec&type=total&ucfs=1&"
+               target="_blank" rel="noopener" class="btn-room"
+               data-ro="Rezervă" data-en="Book">Rezervă</a>
           </div>
         </div>
       </div>
 
       <!-- Camera 2 -->
       <div class="room-card reveal">
-        <img class="room-card-img" src="Poze/camera-dubla-padure-1.jpeg" alt="Camera 2" loading="lazy">
-        <div class="room-card-body">
-          <div class="room-card-type" data-ro="Camera 2" data-en="Room 2">Camera 2</div>
-          <div class="room-card-detail" data-ro="Balcon · Baie privată · TV · AC"
-            data-en="Balcony · Private bath · TV · AC">Balcon · Baie privată · TV · AC</div>
-          <div class="room-card-footer">
-            <div>
-              <div class="room-card-price">
-                <span class="price-val">300</span>
-                <span class="price-currency">RON</span>
-              </div>
-              <span class="price-note" data-ro="/noapte" data-en="/night">/noapte</span>
-            </div>
-            <a href="#sec-rezervari" class="room-card-cta" data-ro="Rezervă" data-en="Book">Rezervă</a>
+        <div class="room-thumb" onclick="openRoomLightbox(2)">
+          <img src="Poze/Camere/Camera 2/Camera 2.jpg" alt="Camera 2" loading="lazy" />
+          <span class="room-gallery-hint">📷 Vezi galeria</span>
+        </div>
+        <div class="room-info">
+          <h3 data-ro="Camera 2" data-en="Room 2">Camera 2</h3>
+          <p class="room-features" data-ro="Balcon · Baie privată · TV · AC" data-en="Balcony · Private bath · TV · AC">Balcon · Baie privată · TV · AC</p>
+          <div class="room-footer">
+            <span class="room-price">300 RON<small data-ro="/noapte" data-en="/night">/noapte</small></span>
+            <a href="https://www.booking.com/hotel/ro/pensiunea-doina-eselnita.ro.html?aid=356980&label=gog235jc-10CAsowAFCGHBlbnNpdW5lYS1kb2luYS1lc2Vsbml0YUgzWANowAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqDVi9AGwAIB0gIkNWUyYTBjYTYtOTM3ZC00OTdhLTg0ZWItYWIxYTQ1YjZlYTRm2AIB4AIB-Share-BOUED3u%401778604318-Share-OUcx0wK%401778604389&sid=f322880ceac32db7dd252f21f2a11840&all_sr_blocks=1637424702_434086289_2_2_0&checkin=2026-05-13&checkout=2026-05-15&dest_id=-1158940&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1637424702_434086289_2_2_0&hpos=1&matching_block_id=1637424702_434086289_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1637424702_434086289_2_2_0__60000&srepoch=1778604405&srpvid=7aa975f7387a00ec&type=total&ucfs=1&"
+               target="_blank" rel="noopener" class="btn-room"
+               data-ro="Rezervă" data-en="Book">Rezervă</a>
           </div>
         </div>
       </div>
 
       <!-- Camera 3 -->
       <div class="room-card reveal">
-        <img class="room-card-img" src="Poze/camera-dubla-verde-1.jpeg" alt="Camera 3" loading="lazy">
-        <div class="room-card-body">
-          <div class="room-card-type" data-ro="Camera 3" data-en="Room 3">Camera 3</div>
-          <div class="room-card-detail" data-ro="Balcon · Baie privată · TV · AC"
-            data-en="Balcony · Private bath · TV · AC">Balcon · Baie privată · TV · AC</div>
-          <div class="room-card-footer">
-            <div>
-              <div class="room-card-price">
-                <span class="price-val">300</span>
-                <span class="price-currency">RON</span>
-              </div>
-              <span class="price-note" data-ro="/noapte" data-en="/night">/noapte</span>
-            </div>
-            <a href="#sec-rezervari" class="room-card-cta" data-ro="Rezervă" data-en="Book">Rezervă</a>
+        <div class="room-thumb" onclick="openRoomLightbox(3)">
+          <img src="Poze/Camere/Camera 3/Camera 3.jpg" alt="Camera 3" loading="lazy" />
+          <span class="room-gallery-hint">📷 Vezi galeria</span>
+        </div>
+        <div class="room-info">
+          <h3 data-ro="Camera 3" data-en="Room 3">Camera 3</h3>
+          <p class="room-features" data-ro="Balcon · Baie privată · TV · AC" data-en="Balcony · Private bath · TV · AC">Balcon · Baie privată · TV · AC</p>
+          <div class="room-footer">
+            <span class="room-price">300 RON<small data-ro="/noapte" data-en="/night">/noapte</small></span>
+            <a href="https://www.booking.com/hotel/ro/pensiunea-doina-eselnita.ro.html?aid=356980&label=gog235jc-10CAsowAFCGHBlbnNpdW5lYS1kb2luYS1lc2Vsbml0YUgzWANowAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqDVi9AGwAIB0gIkNWUyYTBjYTYtOTM3ZC00OTdhLTg0ZWItYWIxYTQ1YjZlYTRm2AIB4AIB-Share-BOUED3u%401778604318-Share-OUcx0wK%401778604389&sid=f322880ceac32db7dd252f21f2a11840&all_sr_blocks=1637424702_434086289_2_2_0&checkin=2026-05-13&checkout=2026-05-15&dest_id=-1158940&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1637424702_434086289_2_2_0&hpos=1&matching_block_id=1637424702_434086289_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1637424702_434086289_2_2_0__60000&srepoch=1778604405&srpvid=7aa975f7387a00ec&type=total&ucfs=1&"
+               target="_blank" rel="noopener" class="btn-room"
+               data-ro="Rezervă" data-en="Book">Rezervă</a>
           </div>
         </div>
       </div>
 
       <!-- Camera 4 -->
       <div class="room-card reveal">
-        <img class="room-card-img" src="Poze/camera-dubla-roz-decor.jpeg" alt="Camera 4" loading="lazy">
-        <div class="room-card-body">
-          <div class="room-card-type" data-ro="Camera 4" data-en="Room 4">Camera 4</div>
-          <div class="room-card-detail" data-ro="Balcon · Baie privată · TV · AC"
-            data-en="Balcony · Private bath · TV · AC">Balcon · Baie privată · TV · AC</div>
-          <div class="room-card-footer">
-            <div>
-              <div class="room-card-price">
-                <span class="price-val">300</span>
-                <span class="price-currency">RON</span>
-              </div>
-              <span class="price-note" data-ro="/noapte" data-en="/night">/noapte</span>
-            </div>
-            <a href="#sec-rezervari" class="room-card-cta" data-ro="Rezervă" data-en="Book">Rezervă</a>
+        <div class="room-thumb" onclick="openRoomLightbox(4)">
+          <img src="Poze/Camere/Camera 4/Camera 4.jpg" alt="Camera 4" loading="lazy" />
+          <span class="room-gallery-hint">📷 Vezi galeria</span>
+        </div>
+        <div class="room-info">
+          <h3 data-ro="Camera 4" data-en="Room 4">Camera 4</h3>
+          <p class="room-features" data-ro="Balcon · Baie privată · TV · AC" data-en="Balcony · Private bath · TV · AC">Balcon · Baie privată · TV · AC</p>
+          <div class="room-footer">
+            <span class="room-price">300 RON<small data-ro="/noapte" data-en="/night">/noapte</small></span>
+            <a href="https://www.booking.com/hotel/ro/pensiunea-doina-eselnita.ro.html?aid=356980&label=gog235jc-10CAsowAFCGHBlbnNpdW5lYS1kb2luYS1lc2Vsbml0YUgzWANowAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqDVi9AGwAIB0gIkNWUyYTBjYTYtOTM3ZC00OTdhLTg0ZWItYWIxYTQ1YjZlYTRm2AIB4AIB-Share-BOUED3u%401778604318-Share-OUcx0wK%401778604389&sid=f322880ceac32db7dd252f21f2a11840&all_sr_blocks=1637424702_434086289_2_2_0&checkin=2026-05-13&checkout=2026-05-15&dest_id=-1158940&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1637424702_434086289_2_2_0&hpos=1&matching_block_id=1637424702_434086289_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1637424702_434086289_2_2_0__60000&srepoch=1778604405&srpvid=7aa975f7387a00ec&type=total&ucfs=1&"
+               target="_blank" rel="noopener" class="btn-room"
+               data-ro="Rezervă" data-en="Book">Rezervă</a>
           </div>
         </div>
       </div>
 
       <!-- Camera 5 -->
       <div class="room-card reveal">
-        <img class="room-card-img" src="Poze/camera-dubla-luminoasa-2.jpeg" alt="Camera 5" loading="lazy">
-        <div class="room-card-body">
-          <div class="room-card-type" data-ro="Camera 5" data-en="Room 5">Camera 5</div>
-          <div class="room-card-detail" data-ro="Balcon · Baie privată · TV · AC"
-            data-en="Balcony · Private bath · TV · AC">Balcon · Baie privată · TV · AC</div>
-          <div class="room-card-footer">
-            <div>
-              <div class="room-card-price">
-                <span class="price-val">300</span>
-                <span class="price-currency">RON</span>
-              </div>
-              <span class="price-note" data-ro="/noapte" data-en="/night">/noapte</span>
-            </div>
-            <a href="#sec-rezervari" class="room-card-cta" data-ro="Rezervă" data-en="Book">Rezervă</a>
+        <div class="room-thumb" onclick="openRoomLightbox(5)">
+          <img src="Poze/Camere/Camera 5/Camera 5.jpg" alt="Camera 5" loading="lazy" />
+          <span class="room-gallery-hint">📷 Vezi galeria</span>
+        </div>
+        <div class="room-info">
+          <h3 data-ro="Camera 5" data-en="Room 5">Camera 5</h3>
+          <p class="room-features" data-ro="Balcon · Baie privată · TV · AC" data-en="Balcony · Private bath · TV · AC">Balcon · Baie privată · TV · AC</p>
+          <div class="room-footer">
+            <span class="room-price">300 RON<small data-ro="/noapte" data-en="/night">/noapte</small></span>
+            <a href="https://www.booking.com/hotel/ro/pensiunea-doina-eselnita.ro.html?aid=356980&label=gog235jc-10CAsowAFCGHBlbnNpdW5lYS1kb2luYS1lc2Vsbml0YUgzWANowAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqDVi9AGwAIB0gIkNWUyYTBjYTYtOTM3ZC00OTdhLTg0ZWItYWIxYTQ1YjZlYTRm2AIB4AIB-Share-BOUED3u%401778604318-Share-OUcx0wK%401778604389&sid=f322880ceac32db7dd252f21f2a11840&all_sr_blocks=1637424702_434086289_2_2_0&checkin=2026-05-13&checkout=2026-05-15&dest_id=-1158940&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1637424702_434086289_2_2_0&hpos=1&matching_block_id=1637424702_434086289_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1637424702_434086289_2_2_0__60000&srepoch=1778604405&srpvid=7aa975f7387a00ec&type=total&ucfs=1&"
+               target="_blank" rel="noopener" class="btn-room"
+               data-ro="Rezervă" data-en="Book">Rezervă</a>
           </div>
         </div>
       </div>
 
       <!-- Camera 6 -->
       <div class="room-card reveal">
-        <img class="room-card-img" src="Poze/camera-dubla-eleganta-4.jpeg" alt="Camera 6" loading="lazy">
-        <div class="room-card-body">
-          <div class="room-card-type" data-ro="Camera 6" data-en="Room 6">Camera 6</div>
-          <div class="room-card-detail" data-ro="Balcon · Baie privată · TV · AC"
-            data-en="Balcony · Private bath · TV · AC">Balcon · Baie privată · TV · AC</div>
-          <div class="room-card-footer">
-            <div>
-              <div class="room-card-price">
-                <span class="price-val">300</span>
-                <span class="price-currency">RON</span>
-              </div>
-              <span class="price-note" data-ro="/noapte" data-en="/night">/noapte</span>
-            </div>
-            <a href="#sec-rezervari" class="room-card-cta" data-ro="Rezervă" data-en="Book">Rezervă</a>
+        <div class="room-thumb" onclick="openRoomLightbox(6)">
+          <img src="Poze/Camere/Camera 6/Camera 6.jpg" alt="Camera 6" loading="lazy" />
+          <span class="room-gallery-hint">📷 Vezi galeria</span>
+        </div>
+        <div class="room-info">
+          <h3 data-ro="Camera 6" data-en="Room 6">Camera 6</h3>
+          <p class="room-features" data-ro="Balcon · Baie privată · TV · AC" data-en="Balcony · Private bath · TV · AC">Balcon · Baie privată · TV · AC</p>
+          <div class="room-footer">
+            <span class="room-price">300 RON<small data-ro="/noapte" data-en="/night">/noapte</small></span>
+            <a href="https://www.booking.com/hotel/ro/pensiunea-doina-eselnita.ro.html?aid=356980&label=gog235jc-10CAsowAFCGHBlbnNpdW5lYS1kb2luYS1lc2Vsbml0YUgzWANowAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqDVi9AGwAIB0gIkNWUyYTBjYTYtOTM3ZC00OTdhLTg0ZWItYWIxYTQ1YjZlYTRm2AIB4AIB-Share-BOUED3u%401778604318-Share-OUcx0wK%401778604389&sid=f322880ceac32db7dd252f21f2a11840&all_sr_blocks=1637424702_434086289_2_2_0&checkin=2026-05-13&checkout=2026-05-15&dest_id=-1158940&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1637424702_434086289_2_2_0&hpos=1&matching_block_id=1637424702_434086289_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1637424702_434086289_2_2_0__60000&srepoch=1778604405&srpvid=7aa975f7387a00ec&type=total&ucfs=1&"
+               target="_blank" rel="noopener" class="btn-room"
+               data-ro="Rezervă" data-en="Book">Rezervă</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ═══════════════════════════════════════════
+    </div><!-- /rooms-grid -->
+
+    <div class="booking-cta reveal">
+      <p data-ro="Rezervați direct pe Booking.com și beneficiați de cele mai bune prețuri disponibile."
+         data-en="Book directly on Booking.com and get the best available prices.">
+        Rezervați direct pe Booking.com și beneficiați de cele mai bune prețuri disponibile.
+      </p>
+      <a href="https://www.booking.com/hotel/ro/pensiunea-doina-eselnita.ro.html?aid=356980&label=gog235jc-10CAsowAFCGHBlbnNpdW5lYS1kb2luYS1lc2Vsbml0YUgzWANowAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqDVi9AGwAIB0gIkNWUyYTBjYTYtOTM3ZC00OTdhLTg0ZWItYWIxYTQ1YjZlYTRm2AIB4AIB-Share-BOUED3u%401778604318-Share-OUcx0wK%401778604389&sid=f322880ceac32db7dd252f21f2a11840&all_sr_blocks=1637424702_434086289_2_2_0&checkin=2026-05-13&checkout=2026-05-15&dest_id=-1158940&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1637424702_434086289_2_2_0&hpos=1&matching_block_id=1637424702_434086289_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1637424702_434086289_2_2_0__60000&srepoch=1778604405&srpvid=7aa975f7387a00ec&type=total&ucfs=1&"
+         target="_blank" rel="noopener" class="btn-primary"
+         data-ro="📅 Verifică disponibilitatea" data-en="📅 Check Availability">📅 Verifică disponibilitatea</a>
+      <a href="Meniu.pdf" target="_blank" class="btn-secondary"
+         data-ro="🍴 Vezi Meniul Restaurantului" data-en="🍴 View Restaurant Menu">🍴 Vezi Meniul Restaurantului</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
      GALLERY
-     ═══════════════════════════════════════════ -->
-  <section class="gallery" id="sec-gallery">
-    <span class="section-label reveal" data-ro="Imagini" data-en="Gallery">Imagini</span>
-    <h2 class="section-title reveal" data-ro="Locuri care <em>te fac să visezi</em>"
-      data-en="Places that <em>make you dream</em>">Locuri care <em>te fac să visezi</em></h2>
-    <div class="gallery-wrapper">
-      <button class="gallery-nav prev" onclick="slideGallery(-1)" aria-label="Previous">❮</button>
-      <div class="gallery-scroll">
-        <img class="gallery-img" src="Poze/vedere-dunare-apus.jpeg" alt="Panoramă Dunăre la apus" loading="lazy"
-          onclick="openLightbox(this.src)">
-        <img class="gallery-img" src="Poze/exterior jos.jpeg" alt="Exterior pensiune" loading="lazy"
-          onclick="openLightbox(this.src)">
-        <img class="gallery-img" src="Poze/foisor-exterior.jpeg" alt="Cameră dublă elegantă" loading="lazy"
-          onclick="openLightbox(this.src)">
-        <img class="gallery-img" src="Poze/camera-dubla-padure-1.jpeg" alt="Cameră dublă vedere pădure" loading="lazy"
-          onclick="openLightbox(this.src)">
-        <img class="gallery-img" src="Poze/camera-dubla-canapea-1.jpeg" alt="Terasă panoramică" loading="lazy"
-          onclick="openLightbox(this.src)">
-        <img class="gallery-img" src="Poze/Exterior.jpeg" alt="Baie modernă" loading="lazy"
-          onclick="openLightbox(this.src)">
-        <img class="gallery-img" src="Poze/camera-dubla-roz-decor.jpeg" alt="Cameră dublă cu decor" loading="lazy"
-          onclick="openLightbox(this.src)">
-        <img class="gallery-img" src="Poze/camera-dubla-pat-mare-2.jpeg" alt="Vedere Dunăre de pe balcon" loading="lazy"
-          onclick="openLightbox(this.src)">
-        <img class="gallery-img" src="Poze/hol camere.jpeg" alt="Salon restaurant" loading="lazy"
-          onclick="openLightbox(this.src)">
-        <img class="gallery-img" src="Poze/balcon-vedere-dunare-1.jpeg" alt="Balcon cu vedere la Dunăre" loading="lazy"
-          onclick="openLightbox(this.src)">
-        <img class="gallery-img" src="Poze/camera-dubla-verde-1.jpeg" alt="Cameră dublă verde" loading="lazy"
-          onclick="openLightbox(this.src)">
-        <img class="gallery-img" src="Poze/camera-dubla-colorata-2.jpeg" alt="Foișor exterior" loading="lazy"
-          onclick="openLightbox(this.src)">
-      </div>
-      <button class="gallery-nav next" onclick="slideGallery(1)" aria-label="Next">❯</button>
-    </div>
-  </section>
+═══════════════════════════════════════════════ -->
+<section id="sec-gallery" class="section">
+  <div class="container">
+    <p class="section-eyebrow" data-ro="Imagini" data-en="Photos">Imagini</p>
+    <h2 data-ro="Locuri care <em>te fac să visezi</em>" data-en="Places that <em>make you dream</em>">
+      Locuri care <em>te fac să visezi</em>
+    </h2>
+  </div>
 
-  <!-- ═══════════════════════════════════════════
+  <div class="gallery-wrapper">
+    <button class="gallery-arrow gallery-prev" onclick="slideGallery(-1)" aria-label="Previous">&#8592;</button>
+    <div class="gallery-scroll" id="gallery-scroll">
+      <img src="Poze/vedere-dunare-apus.jpeg"       alt="Panoramă Dunăre la apus"      loading="lazy" onclick="openGalleryLightbox(0)" />
+      <img src="Poze/Exterior spre pensiune jos.jpeg" alt="Exterior pensiune"            loading="lazy" onclick="openGalleryLightbox(1)" />
+      <img src="Poze/foisor-exterior.jpeg"           alt="Foișor exterior"              loading="lazy" onclick="openGalleryLightbox(2)" />
+      <img src="Poze/camera-dubla-padure-1.jpeg"     alt="Cameră dublă vedere pădure"  loading="lazy" onclick="openGalleryLightbox(3)" />
+      <img src="Poze/camera-dubla-canapea-1.jpeg"    alt="Cameră dublă cu canapea"     loading="lazy" onclick="openGalleryLightbox(4)" />
+      <img src="Poze/Exterior.jpeg"                  alt="Exterior Pensiunea Doina"    loading="lazy" onclick="openGalleryLightbox(5)" />
+      <img src="Poze/camera-dubla-roz-decor.jpeg"    alt="Cameră dublă cu decor"       loading="lazy" onclick="openGalleryLightbox(6)" />
+      <img src="Poze/camera-dubla-pat-mare-2.jpeg"   alt="Cameră dublă pat mare"       loading="lazy" onclick="openGalleryLightbox(7)" />
+      <img src="Poze/hol camere.jpeg"                alt="Hol camere"                  loading="lazy" onclick="openGalleryLightbox(8)" />
+      <img src="Poze/balcon-vedere-dunare-1.jpeg"    alt="Balcon cu vedere la Dunăre"  loading="lazy" onclick="openGalleryLightbox(9)" />
+      <img src="Poze/camera-dubla-verde-1.jpeg"      alt="Cameră dublă verde"          loading="lazy" onclick="openGalleryLightbox(10)" />
+      <img src="Poze/camera-dubla-colorata-2.jpeg"   alt="Cameră dublă colorată"       loading="lazy" onclick="openGalleryLightbox(11)" />
+    </div>
+    <button class="gallery-arrow gallery-next" onclick="slideGallery(1)" aria-label="Next">&#8594;</button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
      FACILITIES
-     ═══════════════════════════════════════════ -->
-  <section class="facilities" id="sec-facilities">
-    <span class="section-label reveal" data-ro="Ce oferim" data-en="What we offer">Ce oferim</span>
-    <h2 class="section-title reveal" data-ro="<em>Facilități</em> principale" data-en="Main <em>facilities</em>">
-      <em>Facilități</em> principale
+═══════════════════════════════════════════════ -->
+<section id="sec-facilities" class="section section-alt">
+  <div class="container">
+    <p class="section-eyebrow" data-ro="Ce oferim" data-en="What we offer">Ce oferim</p>
+    <h2 data-ro="<em>Facilități</em> principale" data-en="Main <em>Facilities</em>"><em>Facilități</em> principale</h2>
+    <div class="facilities-grid">
+      <div class="facility-item reveal"><span class="fac-icon">🌊</span><span data-ro="Vedere la Dunăre" data-en="Danube view">Vedere la Dunăre</span></div>
+      <div class="facility-item reveal"><span class="fac-icon">🌲</span><span data-ro="Vedere la Pădure" data-en="Forest view">Vedere la Pădure</span></div>
+      <div class="facility-item reveal"><span class="fac-icon">🌿</span><span data-ro="Grădină & Curte" data-en="Garden & Yard">Grădină & Curte</span></div>
+      <div class="facility-item reveal"><span class="fac-icon">☕</span><span data-ro="Restaurant" data-en="Restaurant">Restaurant</span></div>
+      <div class="facility-item reveal"><span class="fac-icon">📶</span><span data-ro="WiFi gratuit" data-en="Free WiFi">WiFi gratuit</span></div>
+      <div class="facility-item reveal"><span class="fac-icon">🅿️</span><span data-ro="Parcare gratuită" data-en="Free parking">Parcare gratuită</span></div>
+      <div class="facility-item reveal"><span class="fac-icon">⛵</span><span data-ro="Debarcader & Pescuit" data-en="Dock & Fishing">Debarcader & Pescuit</span></div>
+      <div class="facility-item reveal"><span class="fac-icon">🚢</span><span data-ro="Plimbări cu vaporul" data-en="Boat trips">Plimbări cu vaporul</span></div>
+      <div class="facility-item reveal"><span class="fac-icon">🏖️</span><span data-ro="Șezlonguri & Umbreluțe" data-en="Loungers & Umbrellas">Șezlonguri & Umbreluțe</span></div>
+      <div class="facility-item reveal"><span class="fac-icon">🏡</span><span data-ro="Foișor & Terasă" data-en="Gazebo & Terrace">Foișor & Terasă</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     AMENITIES
+═══════════════════════════════════════════════ -->
+<section id="sec-amenities" class="section">
+  <div class="container">
+    <p class="section-eyebrow" data-ro="Dotări complete" data-en="Full amenities">Dotări complete</p>
+    <h2 data-ro="Tot ce ai <em>nevoie</em>" data-en="Everything you <em>need</em>">Tot ce ai <em>nevoie</em></h2>
+    <div class="amenities-grid reveal">
+      <div class="amenity-col">
+        <h4 data-ro="Camere" data-en="Rooms">Camere</h4>
+        <ul>
+          <li data-ro="Aer condiționat" data-en="Air conditioning">Aer condiționat</li>
+          <li data-ro="Balcon" data-en="Balcony">Balcon</li>
+          <li data-ro="Cabină de duș" data-en="Shower cabin">Cabină de duș</li>
+          <li data-ro="TV prin cablu/satelit" data-en="Cable/satellite TV">TV prin cablu/satelit</li>
+          <li data-ro="Dulap/garderobă" data-en="Wardrobe">Dulap/garderobă</li>
+          <li data-ro="Lenjerie de pat" data-en="Bed linen">Lenjerie de pat</li>
+          <li data-ro="Prosoape" data-en="Towels">Prosoape</li>
+          <li data-ro="Uscător de păr" data-en="Hair dryer">Uscător de păr</li>
+          <li data-ro="Plasă țânțari" data-en="Mosquito net">Plasă țânțari</li>
+          <li data-ro="Umerașe" data-en="Hangers">Umerașe</li>
+        </ul>
+      </div>
+      <div class="amenity-col">
+        <h4 data-ro="Zone comune" data-en="Common areas">Zone comune</h4>
+        <ul>
+          <li data-ro="Bar" data-en="Bar">Bar</li>
+          <li data-ro="Sală de mese" data-en="Dining room">Sală de mese</li>
+          <li data-ro="Foișor" data-en="Gazebo">Foișor</li>
+          <li data-ro="Terasă la soare" data-en="Sun terrace">Terasă la soare</li>
+          <li data-ro="Grădină" data-en="Garden">Grădină</li>
+        </ul>
+      </div>
+      <div class="amenity-col">
+        <h4 data-ro="Securitate & Alte servicii" data-en="Security & Other services">Securitate & Alte servicii</h4>
+        <ul>
+          <li data-ro="Alarmă de fum" data-en="Smoke alarm">Alarmă de fum</li>
+          <li data-ro="Extinctoare" data-en="Fire extinguishers">Extinctoare</li>
+          <li data-ro="Fier de călcat" data-en="Iron">Fier de călcat</li>
+          <li data-ro="Parcare" data-en="Parking">Parcare</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     POLICIES
+═══════════════════════════════════════════════ -->
+<section id="sec-policies" class="section section-alt">
+  <div class="container">
+    <p class="section-eyebrow" data-ro="Informații practice" data-en="Practical info">Informații practice</p>
+    <h2 data-ro="Politici & <em>Condiții</em>" data-en="Policies & <em>Conditions</em>">Politici & <em>Condiții</em></h2>
+    <div class="policies-grid reveal">
+      <div class="policy-card">
+        <h4 data-ro="Check-in / Check-out" data-en="Check-in / Check-out">Check-in / Check-out</h4>
+        <p data-ro="Check-in: 14:00 – 14:30<br>Check-out: 12:00 – 12:30" data-en="Check-in: 14:00 – 14:30<br>Check-out: 12:00 – 12:30">
+          Check-in: 14:00 – 14:30<br>Check-out: 12:00 – 12:30
+        </p>
+      </div>
+      <div class="policy-card">
+        <h4 data-ro="Copii" data-en="Children">Copii</h4>
+        <p data-ro="Acceptăm copii de toate vârstele." data-en="We welcome children of all ages.">Acceptăm copii de toate vârstele.</p>
+      </div>
+      <div class="policy-card">
+        <h4 data-ro="Plata" data-en="Payment">Plata</h4>
+        <p data-ro="Numerar, card, transfer bancar, carduri de vacanță." data-en="Cash, card, bank transfer, vacation vouchers.">
+          Numerar, card, transfer bancar, carduri de vacanță.
+        </p>
+      </div>
+      <div class="policy-card">
+        <h4 data-ro="Fumat" data-en="Smoking">Fumat</h4>
+        <p data-ro="Permis în zone speciale la exterior." data-en="Permitted in designated outdoor areas.">
+          Permis în zone speciale la exterior.
+        </p>
+      </div>
+      <div class="policy-card">
+        <h4 data-ro="Mese" data-en="Meals">Mese</h4>
+        <p data-ro="Tarifele includ doar cazarea.<br>Mic dejun opțional: 30 RON/persoană."
+           data-en="Rates include accommodation only.<br>Optional breakfast: 30 RON/person.">
+          Tarifele includ doar cazarea.<br>Mic dejun opțional: 30 RON/persoană.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════════ -->
+<section id="sec-contact" class="section">
+  <div class="container">
+    <p class="section-eyebrow" data-ro="Rezervați acum" data-en="Book now">Rezervați acum</p>
+    <h2 data-ro="Ne bucurăm să <em>vă primim</em>" data-en="We look forward to <em>welcoming you</em>">
+      Ne bucurăm să <em>vă primim</em>
     </h2>
 
-    <div class="facilities-grid">
-      <div class="facility-card reveal">
-        <div class="facility-icon">🌊</div>
-        <div class="facility-name" data-ro="Vedere la Dunăre" data-en="Danube view">Vedere la Dunăre</div>
-      </div>
-      <div class="facility-card reveal">
-        <div class="facility-icon">🌲</div>
-        <div class="facility-name" data-ro="Vedere la Pădure" data-en="Forest view">Vedere la Pădure</div>
-      </div>
-      <div class="facility-card reveal">
-        <div class="facility-icon">🌿</div>
-        <div class="facility-name" data-ro="Grădină & Curte" data-en="Garden & Yard">Grădină & Curte</div>
-      </div>
-      <div class="facility-card reveal">
-        <div class="facility-icon">☕</div>
-        <div class="facility-name" data-ro="Restaurant" data-en="Restaurant">Restaurant</div>
-      </div>
-      <div class="facility-card reveal">
-        <div class="facility-icon">📶</div>
-        <div class="facility-name" data-ro="WiFi gratuit" data-en="Free WiFi">WiFi gratuit</div>
-      </div>
-      <div class="facility-card reveal">
-        <div class="facility-icon">🅿️</div>
-        <div class="facility-name" data-ro="Parcare gratuită" data-en="Free parking">Parcare gratuită</div>
-      </div>
-      <div class="facility-card reveal">
-        <div class="facility-icon">⛵</div>
-        <div class="facility-name" data-ro="Debarcader & Pescuit" data-en="Dock & Fishing">Debarcader & Pescuit</div>
-      </div>
-      <div class="facility-card reveal">
-        <div class="facility-icon">🚢</div>
-        <div class="facility-name" data-ro="Plimbări cu vaporul" data-en="Boat rides">Plimbări cu vaporul</div>
-      </div>
-      <div class="facility-card reveal">
-        <div class="facility-icon">🏖️</div>
-        <div class="facility-name" data-ro="Șezlonguri & Umbrelute" data-en="Sunbeds & Umbrellas">Șezlonguri & Umbrelute
+    <div class="contact-layout reveal">
+      <div class="contact-info">
+        <p>📍 Str. Dunării, nr. 960, Eșelnița, Mehedinți</p>
+        <p>
+          <a href="tel:+40722506476">0722 506 476</a> &nbsp;·&nbsp;
+          <a href="tel:+40726167639">0726 167 639</a> &nbsp;·&nbsp;
+          <a href="tel:+40790759787">0790 759 787</a>
+        </p>
+        <div class="contact-btns">
+          <a href="tel:+40790759787" class="btn-secondary"
+             data-ro="📞 Sună acum" data-en="📞 Call now">📞 Sună acum</a>
+          <a href="https://wa.me/40722506476?text=Bun%C4%83%20ziua!%20A%C8%99%20dori%20s%C4%83%20fac%20o%20rezervare%20la%20Pensiunea%20Doina."
+             target="_blank" rel="noopener" class="btn-whatsapp"
+             data-ro="💬 WhatsApp" data-en="💬 WhatsApp">💬 WhatsApp</a>
+          <a href="sms:+40790759787;?&body=Bună ziua! Aș dori să fac o rezervare la Pensiunea Doina."
+             class="btn-secondary" data-ro="✉️ Trimite SMS" data-en="✉️ Send SMS">✉️ Trimite SMS</a>
+          <a href="https://www.booking.com/hotel/ro/pensiunea-doina-eselnita.ro.html?aid=356980&label=gog235jc-10CAsowAFCGHBlbnNpdW5lYS1kb2luYS1lc2Vsbml0YUgzWANowAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqDVi9AGwAIB0gIkNWUyYTBjYTYtOTM3ZC00OTdhLTg0ZWItYWIxYTQ1YjZlYTRm2AIB4AIB-Share-BOUED3u%401778604318-Share-OUcx0wK%401778604389&sid=f322880ceac32db7dd252f21f2a11840&all_sr_blocks=1637424702_434086289_2_2_0&checkin=2026-05-13&checkout=2026-05-15&dest_id=-1158940&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1637424702_434086289_2_2_0&hpos=1&matching_block_id=1637424702_434086289_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1637424702_434086289_2_2_0__60000&srepoch=1778604405&srpvid=7aa975f7387a00ec&type=total&ucfs=1&"
+             target="_blank" rel="noopener" class="btn-booking"
+             data-ro="📅 Rezervă pe Booking.com" data-en="📅 Book on Booking.com">📅 Rezervă pe Booking.com</a>
         </div>
-      </div>
-      <div class="facility-card reveal">
-        <div class="facility-icon">🏡</div>
-        <div class="facility-name" data-ro="Foișor & Terasă" data-en="Gazebo & Terrace">Foișor & Terasă</div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ═══════════════════════════════════════════
-     AMENITIES
-     ═══════════════════════════════════════════ -->
-  <section class="amenities" id="sec-amenities">
-    <span class="section-label reveal" data-ro="Dotări complete" data-en="Full amenities">Dotări complete</span>
-    <h2 class="section-title reveal" data-ro="Tot ce ai <em>nevoie</em>" data-en="Everything you <em>need</em>">Tot ce
-      ai <em>nevoie</em></h2>
-
-    <div class="amenity-group reveal">
-      <div class="amenity-group-title" data-ro="Camere" data-en="Rooms">Camere</div>
-      <div class="amenity-items">
-        <span class="amenity-tag" data-ro="Aer condiționat" data-en="Air conditioning">Aer condiționat</span>
-        <span class="amenity-tag" data-ro="Balcon" data-en="Balcony">Balcon</span>
-        <span class="amenity-tag" data-ro="Cabină de duș" data-en="Shower cabin">Cabină de duș</span>
-        <span class="amenity-tag" data-ro="TV prin cablu/satelit" data-en="Cable/satellite TV">TV prin
-          cablu/satelit</span>
-        <span class="amenity-tag" data-ro="Dulap/garderobă" data-en="Wardrobe">Dulap/garderobă</span>
-        <span class="amenity-tag" data-ro="Lenjerie de pat" data-en="Bed linen">Lenjerie de pat</span>
-        <span class="amenity-tag" data-ro="Prosoape" data-en="Towels">Prosoape</span>
-        <span class="amenity-tag" data-ro="Uscător de păr" data-en="Hairdryer">Uscător de păr</span>
-        <span class="amenity-tag" data-ro="Plasă țânțari" data-en="Mosquito net">Plasă țânțari</span>
-        <span class="amenity-tag" data-ro="Umerașe" data-en="Hangers">Umerașe</span>
-      </div>
-    </div>
-
-    <div class="amenity-group reveal">
-      <div class="amenity-group-title" data-ro="Zone comune" data-en="Common areas">Zone comune</div>
-      <div class="amenity-items">
-        <span class="amenity-tag" data-ro="Bar" data-en="Bar">Bar</span>
-        <span class="amenity-tag" data-ro="Sală de mese" data-en="Dining room">Sală de mese</span>
-        <span class="amenity-tag" data-ro="Foișor" data-en="Gazebo">Foișor</span>
-        <span class="amenity-tag" data-ro="Terasă la soare" data-en="Sun terrace">Terasă la soare</span>
-        <span class="amenity-tag" data-ro="Grădină" data-en="Garden">Grădină</span>
-      </div>
-    </div>
-
-    <div class="amenity-group reveal">
-      <div class="amenity-group-title" data-ro="Securitate & Alte servicii" data-en="Security & Other services">
-        Securitate & Alte servicii</div>
-      <div class="amenity-items">
-        <span class="amenity-tag" data-ro="Alarmă de fum" data-en="Smoke alarm">Alarmă de fum</span>
-        <span class="amenity-tag" data-ro="Extinctoare" data-en="Fire extinguishers">Extinctoare</span>
-        <span class="amenity-tag" data-ro="Fier de călcat" data-en="Iron">Fier de călcat</span>
-        <span class="amenity-tag" data-ro="Parcare" data-en="Parking">Parcare</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-     POLICIES
-     ═══════════════════════════════════════════ -->
-  <section class="policies" id="sec-policies">
-    <span class="section-label reveal" data-ro="Informații practice" data-en="Practical info">Informații practice</span>
-    <h2 class="section-title reveal" data-ro="Politici & <em>Condiții</em>" data-en="Policies & <em>Conditions</em>">
-      Politici & <em>Condiții</em></h2>
-
-    <div class="policy-cards">
-      <div class="policy-card reveal">
-        <div class="policy-card-title" data-ro="Check-in / Check-out" data-en="Check-in / Check-out">Check-in /
-          Check-out</div>
-        <div class="policy-card-text" data-ro="Check-in: 14:00 – 14:30<br>Check-out: 12:00 – 12:30"
-          data-en="Check-in: 14:00 – 14:30<br>Check-out: 12:00 – 12:30">Check-in: 14:00 – 14:30<br>Check-out: 12:00 –
-          12:30</div>
-      </div>
-      <div class="policy-card reveal">
-        <div class="policy-card-title" data-ro="Copii" data-en="Children">Copii</div>
-        <div class="policy-card-text" data-ro="Acceptăm copii de toate vârstele."
-          data-en="We welcome children of all ages.">Acceptăm copii de toate vârstele.</div>
-      </div>
-      <div class="policy-card reveal">
-        <div class="policy-card-title" data-ro="Plata" data-en="Payment">Plata</div>
-        <div class="policy-card-text" data-ro="Numerar, card, transfer bancar, carduri de vacanță."
-          data-en="Cash, card, bank transfer, holiday vouchers.">Numerar, card, transfer bancar, carduri de vacanță.
+        <!-- Social media -->
+        <div class="contact-social">
+          <p class="contact-social-label" data-ro="Urmărește-ne" data-en="Follow us">Urmărește-ne</p>
+          <div class="contact-social-icons">
+            <a href="https://www.facebook.com/doina.pensiunea" target="_blank" rel="noopener" class="social-icon contact-social-fb" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              <span>Facebook</span>
+            </a>
+            <a href="https://www.instagram.com/pensiunea_doina/" target="_blank" rel="noopener" class="social-icon contact-social-ig" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <span>Instagram</span>
+            </a>
+            <a href="https://www.tiktok.com/@pensiunea_doina" target="_blank" rel="noopener" class="social-icon contact-social-tt" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.78a4.85 4.85 0 0 1-1.01-.09z"/></svg>
+              <span>TikTok</span>
+            </a>
+          </div>
         </div>
+
+        <!-- Banner meniu restaurant -->
+        <div class="menu-banner">
+          <div class="menu-banner-text">
+            <p class="menu-banner-title" data-ro="Deja la noi? 🍽️" data-en="Already with us? 🍽️">Deja la noi? 🍽️</p>
+            <p class="menu-banner-sub" data-ro="Deschide meniul restaurantului direct pe telefon." data-en="Open the restaurant menu right on your phone.">Deschide meniul restaurantului direct pe telefon.</p>
+          </div>
+          <a href="Meniu.pdf" target="_blank" class="menu-banner-btn"
+             data-ro="Vezi Meniul" data-en="View Menu">Vezi Meniul →</a>
+        </div>
+
       </div>
-      <div class="policy-card reveal">
-        <div class="policy-card-title" data-ro="Fumat" data-en="Smoking">Fumat</div>
-        <div class="policy-card-text" data-ro="Permis în zone speciale la exterior."
-          data-en="Permitted in designated outdoor areas.">Permis în zone speciale la exterior.</div>
-      </div>
-      <div class="policy-card reveal">
-        <div class="policy-card-title" data-ro="Mese" data-en="Meals">Mese</div>
-        <div class="policy-card-text" data-ro="Tarifele includ doar cazarea. Mic dejun opțional: 30 RON/persoană."
-          data-en="Rates include accommodation only. Optional breakfast: 30 RON/person.">Tarifele includ doar cazarea.
-          Mic dejun opțional: 30 RON/persoană.</div>
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2836.837144927534!2d22.34531147598219!3d44.68210497107194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475186c38869ebc5%3A0xda5678ec5ee95b3a!2sPensiunea%20Doina!5e0!3m2!1sro!2sro!4v1775223870343!5m2!1sro!2sro"
+          width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="Locație Pensiunea Doina"></iframe>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══════════════════════════════════════════
-     CONTACT
-     ═══════════════════════════════════════════ -->
-  <section class="contact" id="sec-contact">
-    <span class="section-label reveal" data-ro="Rezervați acum" data-en="Book now">Rezervați acum</span>
-    <h2 class="section-title reveal" data-ro="Ne bucurăm să <em>vă primim</em>"
-      data-en="We look forward to <em>welcoming you</em>">Ne bucurăm să <em>vă primim</em></h2>
-
-    <div class="contact-detail reveal">
-      <div class="dot"></div>
-      <span data-ro="Str. Dunării, nr. 960, Eșelnița, Mehedinți"
-        data-en="Str. Dunării, no. 960, Eșelnița, Mehedinți">Str. Dunării, nr. 960, Eșelnița, Mehedinți</span>
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="nav-logo">Pensiunea <em>Doina</em></span>
+        <p data-ro="Pe malul Dunării · Eșelnița, Mehedinți" data-en="On the Danube shore · Eșelnița, Mehedinți">
+          Pe malul Dunării · Eșelnița, Mehedinți
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="#sec-about" data-ro="Despre noi" data-en="About">Despre noi</a>
+        <a href="#sec-rooms" data-ro="Camere" data-en="Rooms">Camere</a>
+        <a href="#sec-gallery" data-ro="Galerie" data-en="Gallery">Galerie</a>
+        <a href="#sec-contact" data-ro="Contact" data-en="Contact">Contact</a>
+        <a href="Meniu.pdf" target="_blank" data-ro="Meniu" data-en="Menu">Meniu</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/doina.pensiunea" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/pensiunea_doina/" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@pensiunea_doina" target="_blank" rel="noopener" aria-label="TikTok" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.78a4.85 4.85 0 0 1-1.01-.09z"/></svg>
+        </a>
+      </div>
+      <div class="footer-book">
+        <a href="https://www.booking.com/hotel/ro/pensiunea-doina-eselnita.ro.html?aid=356980&label=gog235jc-10CAsowAFCGHBlbnNpdW5lYS1kb2luYS1lc2Vsbml0YUgzWANowAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqDVi9AGwAIB0gIkNWUyYTBjYTYtOTM3ZC00OTdhLTg0ZWItYWIxYTQ1YjZlYTRm2AIB4AIB-Share-BOUED3u%401778604318-Share-OUcx0wK%401778604389&sid=f322880ceac32db7dd252f21f2a11840&all_sr_blocks=1637424702_434086289_2_2_0&checkin=2026-05-13&checkout=2026-05-15&dest_id=-1158940&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1637424702_434086289_2_2_0&hpos=1&matching_block_id=1637424702_434086289_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1637424702_434086289_2_2_0__60000&srepoch=1778604405&srpvid=7aa975f7387a00ec&type=total&ucfs=1&"
+           target="_blank" rel="noopener" class="btn-booking"
+           data-ro="📅 Rezervă pe Booking.com" data-en="📅 Book on Booking.com">📅 Rezervă pe Booking.com</a>
+      </div>
     </div>
-
-    <a href="tel:+40722506476" class="contact-phone reveal">0722 506 476</a>
-    <a href="tel:+40726167639" class="contact-phone reveal">0726 167 639</a>
-    <a href="tel:+40790759787" class="contact-phone reveal">0790 759 787</a>
-
-    <div class="contact-btns reveal">
-      <a href="tel:+40790759787" class="btn-call" data-ro="📞 Sună acum" data-en="📞 Call now">📞 Sună acum</a>
-      <a href="sms:+40790759787;?&body=Bună ziua! Aș dori să fac o rezervare la Pensiunea Doina." class="btn-sms"
-        data-ro="💬 Trimite SMS" data-en="💬 Send SMS">💬 Trimite SMS</a>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-     MAP
-     ═══════════════════════════════════════════ -->
-  <div class="map-section">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2836.837144927534!2d22.34531147598219!3d44.68210497107194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475186c38869ebc5%3A0xda5678ec5ee95b3a!2sPensiunea%20Doina!5e0!3m2!1sro!2sro!4v1775223870343!5m2!1sro!2sro"
-      title="Locație Pensiunea Doina" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+    <p class="footer-copy">© 2025 Pensiunea Doina · Eșelnița, Mehedinți</p>
   </div>
+</footer>
 
-  <!-- ═══════════════════════════════════════════
-     STICKY MOBILE CTA
-     ═══════════════════════════════════════════ -->
-  <div class="mobile-cta" id="mobile-cta">
-    <a href="#sec-rezervari" class="btn-primary" data-ro="📅 Rezervă Acum" data-en="📅 Book Now">📅 Rezervă Acum</a>
+<!-- ═══════════════════════════════════════════════
+     LIGHTBOX (universal)
+═══════════════════════════════════════════════ -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Galerie foto">
+  <button class="lb-close" onclick="closeLightbox()" aria-label="Închide">✕</button>
+  <button class="lb-arrow lb-prev" onclick="lightboxNav(-1)" aria-label="Anterior">&#8592;</button>
+  <div class="lb-img-wrap">
+    <img id="lightbox-img" src="" alt="Foto" />
   </div>
+  <button class="lb-arrow lb-next" onclick="lightboxNav(1)" aria-label="Următor">&#8594;</button>
+  <p id="lightbox-caption"></p>
+</div>
+<div id="lightbox-backdrop" onclick="closeLightbox()"></div>
 
-  <!-- ═══════════════════════════════════════════
-     LIGHTBOX
-     ═══════════════════════════════════════════ -->
-  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Închide">✕</button>
-    <img id="lightbox-img" src="" alt="Preview">
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-     SCRIPTS
-     ═══════════════════════════════════════════ -->
-  <script src="main.js" defer></script>
-
+<script src="main.js"></script>
 </body>
-
 </html>
